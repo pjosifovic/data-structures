@@ -1,4 +1,6 @@
-# data-structures
+![ds](https://i.imgur.com/ezI0kDnt.png)
+======
+
 
 ## Features
 Collection of data structures built in JavaScript
