@@ -83,5 +83,39 @@ describe('oop linked list', () => {
     expect(data.head.next.next.value).toEqual(5);
   });
 
+  test('reverseList should reverse the order of nodes in linked list', () => {
+    let data = new LinkedList();
+    data.add(5);
+    data.add(10);
+    data.add(15);
+    
+    expect(data.head.value).toEqual(5);
+    expect(data.head.next.value).toEqual(10);
+    expect(data.head.next.next.value).toEqual(15);
+    expect(data.size).toEqual(3);
+
+    data.reverseList();
+    expect(data.head.value).toEqual(15);
+    expect(data.head.next.value).toEqual(10);
+    expect(data.head.next.next.value).toEqual(5);
+  });
+
+  test('find nth from last node should return value of node from last node in linked list', () => {
+    let data = new LinkedList();
+    data.add(5);
+    data.add(10);
+    data.add(15);
+    data.add(16);
+    data.add(17);
+    
+    expect(data.head.value).toEqual(5);
+    expect(data.head.next.value).toEqual(10);
+    expect(data.head.next.next.value).toEqual(15);
+    expect(data.size).toEqual(5);
+
+    expect(data._findNthToLastNode(2)).toEqual(16);
+
+  });
+
 
 });
