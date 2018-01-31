@@ -1,0 +1,39 @@
+{
+  "name": "data-structures",
+  "version": "1.0.0",
+  "description": "collection of data structures built in JavaScript",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest -i --coverage",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pjosifovic/data-structures.git"
+  },
+  "keywords": [
+    "data structures", 
+    "single linked list", 
+    "doubly linked list", 
+    "binary search", 
+    "binary search tree", 
+    "hash map", 
+    "heaps", 
+    "stacks", 
+    "queue", 
+    "sorting algorithms"
+  ],
+  "author": "Pedja Josifovic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pjosifovic/data-structures/issues"
+  },
+  "homepage": "https://github.com/pjosifovic/data-structures#readme",
+  "devDependencies": {
+    "eslint": "^4.16.0",
+    "jest": "^22.1.4"
+  }
+}
