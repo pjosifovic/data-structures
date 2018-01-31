@@ -1,6 +1,4 @@
-![ds](https://i.imgur.com/ezI0kDnt.png)
-======
-
+![ds](https://i.imgur.com/ezI0kDn.png?2)
 
 ## Features
 Collection of data structures built in JavaScript
