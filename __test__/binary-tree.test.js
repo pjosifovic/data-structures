@@ -19,19 +19,32 @@ const basicTree = () => {
 describe('binary tree', () => {
   beforeEach(basicTree);
 
-  describe('binary tree methods', () => {
+  describe('binary tree find method', () => {
+    // find method
     test('find method should return if entered value exist in tree', () => {      
       expect(one.find(2)).toEqual(two);
       expect(one.find(3)).toEqual(three);
       expect(one.find(4)).toEqual(four);
-  
     });
     test('should return undefined if value doesnt exist in tree', () => {
-      expect(one.find(8)).toEqual(undefined);
+      expect(one.find(8)).toEqual(null);
     });
     test('should throw an error if value is not a number', () => {
       expect(() => one.find('test')).toThrow();
     });
-
+    // toString
+    test('should return string of node values in pre-order traveral', () => {      
+      let str = '';            
+      expect(one.toString(str)).toEqual('12453');
+    });
+    // toArray
+    test.only('toArray should return an array of all tree node values', () => {
+      let arr = [];
+      expect(one.toArray(arr)).toEqual([1, 2, 4, 5, 3]);
+    });
   });
+  
+
+
+
 });
