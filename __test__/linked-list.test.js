@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList = require('../lib/single-linked-list');
+const LinkedList = require('../src/single-linked-list');
 
 describe('linked-list.js',() => {
   test('A list with a single element, should have a value and no next', () => {

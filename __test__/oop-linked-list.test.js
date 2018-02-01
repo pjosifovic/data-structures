@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList = require('../lib/oop-linked-list');
+const LinkedList = require('../src/oop-linked-list');
 
 describe('oop linked list', () => {
   test('adding method should add new node to the end of the linked list', () => {
