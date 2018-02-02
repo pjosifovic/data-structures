@@ -77,6 +77,9 @@ class BinaryTree {
     return _toArray(this);
   }
 
+  
+
+  
 
 // TODO: other methods and problems
 // ==================================================
@@ -84,14 +87,35 @@ class BinaryTree {
 // getMax()
 // insert()
 // delete()
-// find all leaves
 // find the closest leaf
 // print a path from root to node
 // find second largest
 // clear all nodes
 // size() - number of nodes
 // compare two tree
-// node height()
 }
+
+// getHeight
+const getHeight = node => {
+  if(!(node instanceof BinaryTree)) return null;
+
+  let left = node.left ? getHeight(node.left) : null;
+  let right = node.right ? getHeight(node.right) : null;
+
+  return 1 + Math.max(left, right);
+};
+
+// find all leaves
+const findLeaves = node => {
+  if(!(node instanceof BinaryTree)) return null;
+
+  let leaves = [];
+  if(node.left === null && node.right === null) leaves.push(node);
+  if(node.left) findLeaves(node.left);
+  if(node.right) findLeaves(node.right);
+
+  return leaves;
+};
+
 
 module.exports = BinaryTree;
