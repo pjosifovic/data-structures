@@ -40,6 +40,17 @@ class BinarySearchTree {
 
     return this.value;
   }
+
+  findMax(){
+    if(!this.value) return null;
+
+    if(this.right)
+      return this.right.findMax();
+
+    return this.value;
+  }
+
+
   
 
 

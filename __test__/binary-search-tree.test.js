@@ -19,7 +19,7 @@ describe('binary search tree node', () => {
   });
 
   // findMin()
-  test.only('find min should return the smallest number inside bst', () => {
+  test('find min should return the smallest number inside bst', () => {
     let tree = new BinarySearchTree(10);
     tree.add(6);
     tree.add(11);
@@ -30,7 +30,25 @@ describe('binary search tree node', () => {
     tree.add(2);
     expect(tree.findMin()).toEqual(2);
   });
-  
+  test('findMin should throw an error in case tree is not valid BST tree', () => {
+    let tree = null;
+    expect(() => tree.findMin()).toThrow();
+  });
+
+  // findMax()
+  test('find max should return the biggest number inside bst', () => {
+    let tree = new BinarySearchTree(10);
+    tree.add(6);
+    tree.add(11);
+    tree.add(4);
+    tree.add(7);
+
+    expect(tree.findMax()).toEqual(11);
+    tree.add(21);
+    expect(tree.findMax()).toEqual(21);
+  });
+
+
 });
 
 
