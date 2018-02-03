@@ -117,5 +117,36 @@ const findLeaves = node => {
   return leaves;
 };
 
+// TODO: TEST find lowest common ancestor 
+const lowestCommonAncestor = (node, v1, v2) => {
+  if(!node) return null;
+
+  if(node === v1 || node === v2) return node;
+
+  let left = lowestCommonAncestor(node.left, v1, v2);
+  let right = lowestCommonAncestor(node.right, v1, v2);
+
+  if(left && right) return node;
+  return left ? left : right;
+};
+
+// find the distance from root to given node of BT
+const distance = (root, target) => {
+  let total = 0;
+
+  if(!root) return null;
+
+  const build = node => {
+    if(!node) return 0;
+    if(node === target || build(node.left) || build(node.right)) {
+      total++;
+      return total;
+    }
+
+    return 0;
+  };
+
+  return total - 1;
+};
 
 module.exports = BinaryTree;

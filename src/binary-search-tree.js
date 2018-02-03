@@ -5,11 +5,32 @@ class BinarySearchTree {
     this.value = value;
     this.left = null;
     this.right = null;
-
-    
-
   }
 
+  add(value){
+    if(typeof value !== 'number')
+      throw new TypeError('value must be a number');
+
+    if(!this.value === null) return null;
+
+    if(this.value === value) return this;
+
+    if(value < this.value){
+      if(!this.left) {
+        this.left = new BinarySearchTree(value);
+        return;
+      }
+      this.left.add(value);
+      return; 
+    } else {
+      if(!this.right){
+        this.right = new BinarySearchTree(value);
+        return;
+      }
+      this.right.add(value);
+      return;
+    }
+  }
   
 
 
