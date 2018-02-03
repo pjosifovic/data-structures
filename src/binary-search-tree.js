@@ -32,6 +32,20 @@ class BinarySearchTree {
     }
   }
 
+  find(value){
+    if(typeof value !== 'number')
+      throw new TypeError('value has to be a number');
+
+    if(this.value === value)
+      return this;
+    if(value < this.value && this.left)
+      return this.left.find(value);
+    if(value > this.value && this.right)
+      return this.right.find(value);
+    else
+      return null;
+  }
+
   findMin(){
     if(!this.value) return null;
 

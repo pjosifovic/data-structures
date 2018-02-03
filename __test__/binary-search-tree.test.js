@@ -18,6 +18,28 @@ describe('binary search tree node', () => {
     expect(tree.left.right.value).toEqual(7);
   });
 
+  // find(value)
+  test('find should return entered value if located in BST', () => {
+    let tree = new BinarySearchTree(10);
+    tree.add(6);
+    tree.add(11);
+    tree.add(4);
+    tree.add(7);
+
+    expect(tree.find(4).value).toEqual(4);
+  });
+  test('find should return null if value is not located in BST', () => {
+    let tree = new BinarySearchTree(10);
+    tree.add(6);
+    tree.add(11);
+    tree.add(4);
+    tree.add(7);
+
+    expect(tree.find(22)).toBeNull();
+  });
+
+
+
   // findMin()
   test('find min should return the smallest number inside bst', () => {
     let tree = new BinarySearchTree(10);
@@ -47,6 +69,8 @@ describe('binary search tree node', () => {
     tree.add(21);
     expect(tree.findMax()).toEqual(21);
   });
+
+
 
 
 });
