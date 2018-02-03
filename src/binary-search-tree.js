@@ -90,6 +90,23 @@ class BinarySearchTree {
     return this;
   }
 
+  findAllLeaves(){
+    let leaves =[];
+    if(!this.value) return null;
+
+    const _findAllLeaves = node => {
+      if(node.left)
+        _findAllLeaves(node.left);
+      if(node.right)
+        _findAllLeaves(node.right);
+      if(!node.left && !node.right)
+        leaves.push(node.value);
+    };
+    
+    _findAllLeaves(this);
+    return leaves;
+  }
+
 
   
 
@@ -97,10 +114,6 @@ class BinarySearchTree {
 
 // TODO: other methods and problems
 // ==================================================
-// getMin()
-// getMax()
-// insert()
-// delete()
 // find all leaves
 // breath first BST
 // find the closest leaf

@@ -121,7 +121,17 @@ describe('binary search tree node', () => {
     expect(tree.right.value).toEqual(14);
     expect(tree.left.left.value).toEqual(5); 
     expect(tree.left.left.left.value).toEqual(2); 
+  });
 
+  // findAllLeves
+  test('find all leaves should return an array of all leaves in BST', () => {
+    let tree = new BinarySearchTree(10);
+    tree.add(6);
+    tree.add(11);
+    tree.add(4);
+    tree.add(7);
+
+    expect(tree.findAllLeaves()).toEqual([4, 7, 11]);
   });
 
 
