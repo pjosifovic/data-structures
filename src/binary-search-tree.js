@@ -5,6 +5,7 @@ class BinarySearchTree {
     this.value = value;
     this.left = null;
     this.right = null;
+    this.parent = null;
   }
 
   add(value){
@@ -21,6 +22,7 @@ class BinarySearchTree {
         return;
       }
       this.left.add(value);
+      this.left.parent = this;
       return; 
     } else {
       if(!this.right){
@@ -28,6 +30,7 @@ class BinarySearchTree {
         return;
       }
       this.right.add(value);
+      this.right.parent = this;
       return;
     }
   }
@@ -53,6 +56,7 @@ class BinarySearchTree {
       return this.left.findMin();
 
     return this.value;
+    // return this.left ? this.left.findMin(value) : this.value;
   }
 
   findMax(){
@@ -62,6 +66,28 @@ class BinarySearchTree {
       return this.right.findMax();
 
     return this.value;
+    // return this.right ? this.right.findMax(value) : this.value;
+  }
+
+  delete(value){
+    
+    // node doesn't have left or right - return null
+    if(!this.value) return null;
+
+    // node only has left subtree- return the left subtree
+    if(value < this.value){
+      this.left = this.left && this.left.delete(value);
+      // node only has right subtree- return the right subtree
+    } else if (value > this.value){
+      this.right = this.right && this.right.delete(value);
+    // node has both left and right - find the minQimum value in the right subtree, set that value to the currently found node, then recursively delete the minimum value in the right subtree
+    } else if (this.left && this.right) {
+      this.value = this.right.findMin();
+      this.right = this.right.delete(this.value);
+    } else {
+      return this.left || this.right;
+    }
+    return this;
   }
 
 
