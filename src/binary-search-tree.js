@@ -31,6 +31,15 @@ class BinarySearchTree {
       return;
     }
   }
+
+  findMin(){
+    if(!this.value) return null;
+
+    if(this.left)
+      return this.left.findMin();
+
+    return this.value;
+  }
   
 
 
